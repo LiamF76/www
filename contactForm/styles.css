@@ -115,3 +115,16 @@ button:hover {
     font-weight: bold;
     margin-top: 15px;
 }
+
+/* Success and Error Message Styling */
+.success-message {
+    color: #28a745;  /* Green color for success */
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: #dc3545;  /* Red color for error */
+    font-weight: bold;
+    margin-top: 15px;
+}

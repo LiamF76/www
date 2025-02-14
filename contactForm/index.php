@@ -1,23 +1,25 @@
 <?php
+// php code for form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
-
-    // Email details
-    $to = "fogartyl27@mycu.concord.edu";  // Change to the actual email address
-    $subject = "Contact Form Message from " . $name;
-    $body = "Name: " . $name . "\n" .
-            "Email: " . $email . "\n\n" .
-            "Message:\n" . $message;
-    $headers = "From: " . $email;
-
-    // Send the email
-    if (mail($to, $subject, $body, $headers)) {
-        $confirmation = "Your message has been sent successfully!";
+    // Assuming validation or form submission success check
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "<div class='error-message'>All fields are required!</div>";
     } else {
-        $confirmation = "There was an error sending your message.";
+        // Send the email (dummy example)
+        $to = "madeUpEmail@outlook.com";
+        $subject = "New Contact Form Submission";
+        $body = "Name: $name\nEmail: $email\nMessage: $message";
+        $headers = "From: $email";
+        
+        if (mail($to, $subject, $body, $headers)) {
+            echo "<div class='success-message'>Your message has been successfully sent!</div>";
+        } else {
+            echo "<div class='error-message'>There was an error sending your message. Please try again.</div>";
+        }
     }
 }
 ?>
