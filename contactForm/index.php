@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $body = "Name: $name\nEmail: $email\nMessage: $message";
         $headers = "From: $email";
         
+        // error and success reporting, with unique classes to show error or good submission red/green
         if (mail($to, $subject, $body, $headers)) {
             echo "<div class='success-message'>Your message has been successfully sent!</div>";
         } else {
