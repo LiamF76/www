@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <footer>
-        <p>© <?php echo date("Y"); ?> Your Website. All rights reserved.</p>
+        <p>© <?php echo date("Y"); ?> Liam's Contact Form. He thought this had to be on the concord site.</p>
     </footer>
 </body>
 </html>
