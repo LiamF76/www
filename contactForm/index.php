@@ -1,11 +1,14 @@
 <?php
 // php code for form submission
+// check if post in compat
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assuming validation or form submission success check
+    // declare vars to recieve with php form
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
     
+    // error catching, check for empty fields
     if (empty($name) || empty($email) || empty($message)) {
         echo "<div class='error-message'>All fields are required!</div>";
     } else {
